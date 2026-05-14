@@ -7,8 +7,9 @@
 int main() {
   // Área para definição das variáveis para armazenar as propriedades das cidades
   char Estado[30], estado2[20], nomecit[20], nomecit2[20];
-  float  area1, area2, pib1, pib2, pop1, pop2;
+  float area1, area2, pib1, pib2, pop1, pop2;
   int npont1, npont2, codigo1, codigo2;
+  float densidade1, pibpc1, densidade2, pibpc2;
 
   // Área para entrada de dados
   // codigo para cadastro de dados da primeira carta
@@ -37,11 +38,15 @@ int main() {
 
   printf(".........................\n");
 
+  // cauculo do pib e  densidade 
+  densidade1 = pop1/area1;
+  pibpc1 = pib1/pop1;
+
   //exibir os dados da primeira carta
   printf("     CARTA 1 \n");
   printf(" Estado: %s \n Codigo da carta: %d \n Cidade: %s \n ", Estado,codigo1 ,nomecit);
-  printf("Populaçao: %.2f \n Area: %.2f \n Pib: %2.f \n Pontos turisticos: %d \n", pop1, area1, pib1, npont1);
-
+  printf("Populaçao: %f \n Area: %f \n Pib: %f \n Pontos turisticos: %d \n", pop1, area1, pib1, npont1);
+  printf(" O pib per capita dessa carta é de: %f \n A densidade populacional dessa carta é: %f \n ", pibpc1, densidade1);
   printf(".........................\n");
 
   //codigo para cadastro de dados da segunda carta
@@ -70,26 +75,20 @@ int main() {
 
   printf(".........................\n");
   
+    // cauculo do pib e  densidade 
+  densidade2 = pop2/area2;
+  pibpc2 = pib2/pop2;
+
   //exibir dados da segunda carta 
     printf("     CARTA 2 \n");
   printf(" Estado: %s \n Codigo da carta: %d \n Cidade: %s \n ", estado2,codigo2 ,nomecit2);
-  printf("Populaçao: %.2f \n Area: %.2f \n Pib: %2.f \n Pontos turisticos: %d \n", pop2, area2, pib2, npont2);
-
+  printf("Populaçao: %f \n Area: %f \n Pib: %f \n Pontos turisticos: %d \n", pop2, area2, pib2, npont2);
+  printf("O pib per capita dessa carta é de: %f \n A densidade populacional dessa carta é: %f \n ", pibpc2, densidade2);
   printf(".........................\n");
 
-  // Área para exibição dos dados das duas cidades
-  printf("     AS CARTAS DO JOGO SAO :  \n");
+  //area de cauculo 
 
-  printf(".........................\n");
 
-  printf("     CARTA 1 \n");
-  printf(" Estado: %s \n Codigo da carta: %d \n Cidade: %s \n ", Estado,codigo1 ,nomecit);
-  printf("Populaçao: %.2f \n Area: %.2f \n Pib: %2.f \n Pontos turisticos: %d \n", pop1, area1, pib1, npont1);
 
-  printf(".........................\n");
-
-      printf("     CARTA 2 \n");
-  printf(" Estado: %s \n Codigo da carta: %d \n Cidade: %s \n ", estado2,codigo2 ,nomecit2);
-  printf("Populaçao: %.2f \n Area: %.2f \n Pib: %2.f \n Pontos turisticos: %d \n", pop2, area2, pib2, npont2);
 return 0;
 }
